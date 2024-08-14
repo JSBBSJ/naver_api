@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="https://auth.worksmobile.com/oauth2/v2.0/authorize">
+		<input type="hidden" name="client_id" th:value="${@environment.getProperty('naver.client.id')}">
+		<input type="hidden" name="redirect_uri" th:value="${@environment.getProperty('naver.client.redirect-uri')}">
+		<input type="hidden" name="scope" th:value="${@environment.getProperty('naver.client.scope')}">
+		<input type="hidden" name="response_type" value="code">
+		<input type="hidden" name="state" value="orgunit.read">
+		<button>부서조회</button>
+	</form>
+	
+</body>
+</html>
